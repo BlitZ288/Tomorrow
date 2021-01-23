@@ -1,0 +1,22 @@
+﻿<Window x:Name="Regisration_Window" x:Class="WpfApp1.Registration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Tomorrow will be better" Height="450" Width="450" WindowStartupLocation="CenterScreen" Background="#FF19547C" Closed="Regisration_Window_Closed">
+    <Grid>
+        <Label x:Name="Header_Registration" Content="Регистрация новго пользователя" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="138,0,113.2,0" Foreground="White"/>
+        <Label Content="Введите логин" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="95,31,0,0" RenderTransformOrigin="0.385,0.227" Foreground="White"/>
+        <TextBox x:Name="LoginReg_Textbox" HorizontalAlignment="Left" Height="40" Margin="95,61,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="266" Background="#FF202020" Foreground="White" TextChanged="LoginReg_Textbox_TextChanged"/>
+        <TextBox x:Name="PasswordReg_TextBox" HorizontalAlignment="Left" Height="40" Margin="95,137,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="266" Background="#FF202020" Foreground="White" TextChanged="PasswordReg_TextBox_TextChanged"/>
+        <Label Content="Введите пароль" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="95,106,0,0" RenderTransformOrigin="0.385,0.227" Foreground="White"/>
+        <Label Content="Выберете дату рождения" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="95,182,0,0" RenderTransformOrigin="0.385,0.227" Foreground="White"/>
+        <DatePicker x:Name="Birthday_DataPicker" SelectedDateFormat="Long"  HorizontalAlignment="Left" Margin="95,213,0,0" VerticalAlignment="Top" Width="266"  Background="#FF000E2B" Foreground="Black" OpacityMask="Black" BorderBrush="Black"/>
+        <Button x:Name="Registration_Button" Content="Зарегистрироваться" HorizontalAlignment="Left" VerticalAlignment="Top" Width="175" Margin="138,255,0,0" Height="40" Background="#FF0E86CA" BorderBrush="#FF10A1DE" Foreground="White" Click="Button_Click"/>
+        <TextBlock x:Name="debugRegister_Textblock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="95,334,0,0" Height="75" Width="266" Foreground="White"/>
+        <Button x:Name="Back_Button" Content="Назад" HorizontalAlignment="Left" Height="40" Margin="329,255,0,0" VerticalAlignment="Top" Width="61" Background="#FF0E86CA" Foreground="White" BorderBrush="#FF10A1DE" Click="Back_Button_Click"/>
+
+    </Grid>
+</Window>
