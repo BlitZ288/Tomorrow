@@ -29,7 +29,11 @@ namespace WpfApp1
         {
             Application.Current.Shutdown();
         }
-
+        /// <summary>
+        /// Проверка и регистрация пользователя 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
          
@@ -90,7 +94,11 @@ namespace WpfApp1
             Registration_Button.IsEnabled = true;
 
         }
-
+        /// <summary>
+        /// Преход к окну логина
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Back_Button_Click(object sender, RoutedEventArgs e)
         {
          

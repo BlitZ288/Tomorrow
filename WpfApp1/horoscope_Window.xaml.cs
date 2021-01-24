@@ -15,6 +15,10 @@ namespace WpfApp1
     public partial class horoscope_Window : Window
     {
         ParserWorker<string[]> parser;
+        /// <summary>
+        /// Выводим информацию о пользователя, и выделение памяти для парсера
+        ///  </summary>
+        /// <param name="user"></param>
         public horoscope_Window(User user)
         {
             InitializeComponent();
@@ -25,7 +29,11 @@ namespace WpfApp1
             parser.OnCompleted += Parser_OnCompleted;
             parser.OnNewData += Parser_OnNewData;
         }
-
+        /// <summary>
+        /// Вывод информации
+        /// </summary>
+        /// <param name="arg1"></param>
+        /// <param name="arg2"></param>
         private void Parser_OnNewData(object arg1, string[] arg2)
         {
             listbox.ItemsSource = arg2;
@@ -35,10 +43,14 @@ namespace WpfApp1
         {
             MessageBox.Show("Ваш горскоп на сегодня");
         }
-
+        /// <summary>
+        /// Кнопка начала парсинга 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Start_Click(object sender, RoutedEventArgs e)
         {
-            using(MyDbContex contex =new MyDbContex())
+            using(MyDbContex contex =new MyDbContex())//Выдает именно тот гороскоп
             {
                 var zodiacs = contex.Zodiacs.Where(p => p.Name == Zodiac_canvas.Content.ToString());
               foreach(Zodiac zodiac in zodiacs)

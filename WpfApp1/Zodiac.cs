@@ -5,15 +5,28 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace WpfApp1
-{
+{/// <summary>
+/// Класс знака зодиака
+/// </summary>
     public class Zodiac
     {
         public int Id { get; set; }
+        /// <summary>
+        /// Название зодиака
+        /// </summary>
         public string Name { get; set; }
+        /// <summary>
+        /// Хранилище URL
+        /// </summary>
         public string Pool { get; set; }
-     
+        /// <summary>
+        ///Коллекция пользователя относящийся к пользователя
+        /// </summary>
         public virtual ICollection <User> Users {get; set;}
-
+        /// <summary>
+        /// Инициализация
+        /// </summary>
+        /// <param name="date"></param>
         public Zodiac(DateTime date)
         {
             #region Распределение имен
@@ -84,10 +97,20 @@ namespace WpfApp1
             #endregion
             Users = new List<User>();
         }
+        /// <summary>
+        /// Конструктор по умолчанию
+        /// </summary>
         public Zodiac()
         {
             Users = new List<User>();
         }
+        /// <summary>
+        ///Присвоение имени за счет даты
+        /// </summary>
+        /// <param name="SelectDate"></param>
+        /// <param name="StartDate"></param>
+        /// <param name="EndDate"></param>
+        /// <returns></returns>
         public bool Sersh(DateTime SelectDate, DateTime StartDate, DateTime EndDate)
         {
             bool temp = false;

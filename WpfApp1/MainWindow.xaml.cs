@@ -24,7 +24,11 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Переход в окно регистрации 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
@@ -33,12 +37,17 @@ namespace WpfApp1
             window.ShowDialog();
 
         }
-
+        /// <summary>
+        /// Проверка пользователя 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Login_Button_Click(object sender, RoutedEventArgs e)
         {
             bool temp = false;
             User userLogin = new User();
-            using (MyDbContex contex = new MyDbContex())
+            
+            using (MyDbContex contex = new MyDbContex())//Проверяем существует уже такой пользователь или нет 
             {
                 var user = contex.Users.Where(p => p.Login == Login_textbox.Text);
                 if (user != null)

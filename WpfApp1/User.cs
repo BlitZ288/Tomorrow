@@ -1,27 +1,47 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Windows;
 using System.Windows.Controls;
 
 namespace WpfApp1
-{
+{/// <summary>
+/// Класс пользователя 
+/// </summary>
     public class User
     {
        public int Id { get; set;  }
+        /// <summary>
+        /// Имя пользователя
+        /// </summary>
        public string Login { get; set; }
+        /// <summary>
+        /// Пароль
+        /// </summary>
        public string Password { get; set; }
+        /// <summary>
+        /// День рождения пользователя 
+        /// </summary>
        public DateTime Birthday { get; set; }
-      
-        public int? ZodiacId { get; set; }
-       public virtual  Zodiac Zodiac { get; set; }
-      
-        
 
+      /// <summary>
+      /// Id знака
+      /// </summary>
+        public int? ZodiacId { get; set; }
+        /// <summary>
+        /// Знак зодиака
+        /// </summary>
+        public virtual  Zodiac Zodiac { get; set; }
+
+
+        /// <summary>
+        ///инициализация
+        /// </summary>
+        /// <param name="login"></param>
+        /// <param name="password"></param>
+        /// <param name="birtday"></param>
+        /// <param name="debug"></param>
+        /// <param name="zodiac"></param>
         public User(TextBox login, TextBox password, DatePicker birtday,TextBlock debug, Zodiac zodiac)
   
-        { ///Todo 
-            ///Начать делать БД
+        { 
 
               if (string.IsNullOrWhiteSpace(login.Text))
                 {
@@ -46,6 +66,9 @@ namespace WpfApp1
             Birthday = (DateTime)birtday.SelectedDate.Value;
             Zodiac = zodiac;
         }
+        /// <summary>
+        /// конструктор по умолчанию
+        /// </summary>
         public User() { }
 
     }
